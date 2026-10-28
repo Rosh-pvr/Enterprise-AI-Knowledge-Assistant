@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Demo (Interactive Assistant)",
+      "type": "shell",
+      "command": "bash start-demo.sh",
+      "windows": {
+        "command": "powershell -ExecutionPolicy Bypass -File .\\start-demo.ps1"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

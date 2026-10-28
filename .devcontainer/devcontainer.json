@@ -4,28 +4,28 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "forwardPorts": [5157, 15123, 11434],
+  "forwardPorts": [5157],
   "portsAttributes": {
     "5157": {
       "label": "Blazor AI Assistant UI",
       "onAutoForward": "openBrowser"
     },
+    "11434": {
+      "label": "Ollama Internal",
+      "onAutoForward": "ignore"
+    },
     "15123": {
       "label": "Aspire Telemetry Dashboard",
       "onAutoForward": "notify"
-    },
-    "11434": {
-      "label": "Ollama LLM Engine",
-      "onAutoForward": "silent"
     }
   },
   "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postAttachCommand": "bash start-demo.sh",
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-dotnettools.csharp",
-        "ms-dotnettools.csdevkit",
-        "ms-azuretools.vscode-docker"
+        "ms-dotnettools.csdevkit"
       ]
     }
   }
