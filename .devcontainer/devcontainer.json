@@ -1,0 +1,32 @@
+{
+  "name": "Enterprise AI Knowledge Assistant (.NET 9 + Ollama)",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [5157, 15123, 11434],
+  "portsAttributes": {
+    "5157": {
+      "label": "Blazor AI Assistant UI",
+      "onAutoForward": "openBrowser"
+    },
+    "15123": {
+      "label": "Aspire Telemetry Dashboard",
+      "onAutoForward": "notify"
+    },
+    "11434": {
+      "label": "Ollama LLM Engine",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
